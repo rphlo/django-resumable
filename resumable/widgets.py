@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import magic
 import re
 
@@ -44,7 +43,7 @@ class ResumableFileInput(FileInput):
         return files.get(name, None)
 
     def render(self, name, value, attrs=None, **kwargs):
-        attrs = self.build_attrs(attrs)
+        attrs = self.build_attrs(self.attrs, attrs)
 
         if 'required' in attrs:
             del attrs['required']
